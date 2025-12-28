@@ -1,23 +1,15 @@
-import { buttonVariants } from "@/components/ui/button";
+// import { buttonVariants } from "@/components/ui/button";
+import { Aside } from "@/components/aside/aside";
+import { MenuModal } from "@/components/menuModal/menuModal";
+import { Header } from "@/components/header/header"
 
-
-
-function Message() {
-    return (
-        <div class="flex flex-col gap-2 p-8 sm:flex-row sm:items-center sm:gap-6 sm:py-4 ...">  
-            <img class="mx-auto block h-24 rounded-full sm:mx-0 sm:shrink-0" src="/img/erin-lindford.jpg" alt="" />  
-            <div class="space-y-2 text-center sm:text-left">    
-                <div class="space-y-0.5">      
-                    <p class="text-lg font-semibold text-black">Erin Lindford</p>     
-                    <p class="font-medium text-gray-500">Product Engineer</p>    
-                </div>    
-                <buttonVariants class="border-purple-200 text-purple-600 hover:border-transparent hover:bg-purple-600 hover:text-white active:bg-purple-700 ...">      Message    </buttonVariants>  
-            </div>
-        </div>
-    )
-}
 
 export default function Page() {
-
-    return <Message />
-};
+    return (
+        <div className="grid grid-cols-4 gap-1 h-screen bg-gray-900">
+            <Header />
+            <Aside />
+            <MenuModal />
+        </div>
+    );
+}
