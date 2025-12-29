@@ -1,31 +1,26 @@
 import { DateComponent } from "./dateComponent";
 import { TitleInfo } from "./titleInfo";
-import { CodeBlock } from "./codeBlock";
 
-// const pythonCodeExample =  `import asyncio
-// import time
+export function Article({ article }) {
+    if (!article) {
+        return (
+            <main className="w-full col-span-3 border border-gray-700 rounded-3xl px-6 py-8 relative z-10 bg-gray-800 h-full overflow-y-auto">
+                <p className="text-gray-400">Loading article...</p>
+            </main>
+        );
+    }
 
-// async def task_runner():
-//     print(f"Starting task at: {time.strftime('%y:%m:%d - %h:%m:%s')}")
-//     await asyncio.sleep(3)
-//     print(f"Ending Task at: {time.strftime('%y:%m:%d - %h:%m:%s')}")
-    
-// with asyncio.Runner() as async.
-//     async.run(task_runner)
-// `;
-
-export function Article() {
     return (
-        <main className="w-full col-span-3 border rounded-3xl px-3 relative z-10 bg-zinc-700" >
-            
-            <DateComponent />
-            <TitleInfo />
-            {/* <CodeBlock
-                code={pythonCodeExample}
-                language="ruby"
-                fileName="ejemplo.js"
-                showLineNumbers={true}
-            /> */}
+        <main className="w-full col-span-3 border border-gray-700 rounded-3xl px-6 py-8 relative z-10 bg-gray-800 h-full overflow-y-auto" >
+            <DateComponent article={article} />
+            <TitleInfo article={article} />
+            <div 
+                className="article-content mt-8 prose prose-invert max-w-none"
+                dangerouslySetInnerHTML={{ __html: article.content }}
+                style={{
+                    color: '#e5e7eb'
+                }}
+            />
         </main>
     );
 }

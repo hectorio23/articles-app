@@ -1,10 +1,9 @@
-export function Concepts() {
-    const concepts = [
-        "Kernel Development",
-        "Operating Systems",
-        "Consistency",
-        "System Boot",
-    ];
+export function Concepts({ article }) {
+    const concepts = article?.concepts || [];
+
+    if (concepts.length === 0) {
+        return null;
+    }
 
     return (
         <div className="rounded-sm py-2 px-4">
@@ -13,7 +12,7 @@ export function Concepts() {
                 {concepts.map((concept, index) => (
                     <button
                         key={index}
-                        className="bg-zinc-700 hover:bg-zinc-600 text-gray-200 text-sm py-1.5 px-3 rounded-full transition-colors duration-200 text-left mr-2 mb-1"
+                        className="bg-gray-700 hover:bg-gray-600 text-gray-200 text-sm py-1.5 px-3 rounded-full transition-colors duration-200 text-left mr-2 mb-1"
                     >
                         {concept}
                     </button>

@@ -134,3 +134,12 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.article-content h2 {
+  @apply text-2xl font-semibold mt-8 mb-4 text-white;
+  scroll-margin-top: 20px;
+}
+
+.article-content p {
+  @apply mb-4 text-gray-300 leading-relaxed;
+}

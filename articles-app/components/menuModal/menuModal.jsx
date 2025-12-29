@@ -4,7 +4,7 @@ import { Contents } from "./contents"
 
 export function MenuModal() {
     return (
-        <aside className="p-2 w-90 border border-gray-600 bg-zinc-900 rounded-3xl col-end-6 text-white h-full overflow-y-auto relative z-10">
+        <aside className="p-2 w-90 border border-gray-600 bg-gray-900 rounded-3xl col-end-6 text-white h-full overflow-y-auto relative z-10">
             <RecentActivity />
             <hr className="border-gray-700 my-2" />
             <Concepts />
